@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="Navy">#1A374D</color>
+    <color name="BlueCold">#406882</color>
+    <color name="Wedding">#6998AB</color>
+    <color name="Winter">#B1D0E0</color>
+
+    <color name="primaryBrandNavy">#406882</color>
+    <color name="primaryLightBrandNavy">#6f96b2</color>
+    <color name="primaryDarkBrandNavy">#0e3e55</color>
+    <color name="secondaryBrandNavy">#b1d0e0</color>
+    <color name="secondaryLightBrandNavy">#e3ffff</color>
+    <color name="secondaryDarkBrandNavy">#819fae</color>
+    <color name="primaryTextBrandNavy">#ffffff</color>
+    <color name="secondaryTextBrandNavy">#000000</color>
+
+</resources>

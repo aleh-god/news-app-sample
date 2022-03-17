@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">News App Sample</string>
+    <string name="alert_error_loading">Load data error!</string>
+    <string name="snackbar_btn_reload">Reload</string>
 </resources>

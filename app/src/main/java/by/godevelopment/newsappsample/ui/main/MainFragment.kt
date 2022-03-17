@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import by.godevelopment.newsappsample.R
 import by.godevelopment.newsappsample.commons.TAG
 import by.godevelopment.newsappsample.databinding.MainFragmentBinding
@@ -46,7 +47,12 @@ class MainFragment : Fragment() {
                         binding.progress.visibility = View.GONE
                     } else binding.progress.visibility = View.VISIBLE
 
-                    binding.message.text = "Status = ${uiState.model.status}\n Results = ${uiState.model.totalResults}"
+                    binding.headerStatus.text = it.model.status
+                    binding.headerResults.text = it.model.totalResults.toString()
+                    val adapter = NewsAdapter().apply {
+                        newsList = it.model.articles
+                    }
+                    binding.rv.adapter = adapter
                 }
             }
         }

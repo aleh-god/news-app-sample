@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/main_padding">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/text_content"
+            android:padding="@dimen/main_padding"
+            tools:text="@tools:sample/lorem"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_author"
+            app:layout_constraintBottom_toTopOf="@id/text_description"
+            android:padding="@dimen/main_padding"
+            tools:text="@tools:sample/lorem"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_content"
+            app:layout_constraintBottom_toTopOf="@id/text_publishedAt"
+            android:padding="@dimen/main_padding"
+            tools:text="@tools:sample/lorem"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_publishedAt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_description"
+            app:layout_constraintBottom_toTopOf="@id/text_source"
+            android:padding="@dimen/main_padding"
+            tools:text="@tools:sample/lorem"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_source"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_publishedAt"
+            app:layout_constraintBottom_toTopOf="@id/text_title"
+            android:padding="@dimen/main_padding"
+            tools:text="@tools:sample/lorem"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_source"
+            app:layout_constraintBottom_toTopOf="@id/image"
+            android:padding="@dimen/main_padding"
+            tools:text="@tools:sample/lorem"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintDimensionRatio="@string/square"
+            app:layout_constraintTop_toBottomOf="@id/text_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:src="@drawable/ic_launcher_foreground"
+            android:contentDescription="@string/layout_desc_item"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

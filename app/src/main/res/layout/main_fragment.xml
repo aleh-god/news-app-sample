@@ -8,32 +8,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainFragment"
     >
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/header_status"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/header_results"
-        android:padding="@dimen/main_padding"
-        tools:text="Status: ok"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-        />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/header_results"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header_status"
-        app:layout_constraintBottom_toTopOf="@id/rv"
-        android:padding="@dimen/main_padding"
-        tools:text="Results: 30"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-        />
+        android:layout_height="match_parent"
+        >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
@@ -41,13 +20,14 @@
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header_results"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:scrollbars="vertical"
         android:padding="@dimen/main_padding"
         tools:listitem="@layout/item_rv"
         />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <ProgressBar
         android:id="@+id/progress"

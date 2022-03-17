@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import by.godevelopment.newsappsample.R
 import by.godevelopment.newsappsample.commons.TAG
 import by.godevelopment.newsappsample.data.datamodel.NewsModel
+import by.godevelopment.newsappsample.domain.ConvertTextToBetterViewUseCase
 import by.godevelopment.newsappsample.domain.FetchNewsUseCase
 import by.godevelopment.newsappsample.domain.StringHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,7 +17,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val fetchNewsUseCase: FetchNewsUseCase,
+    private val convertTextToBetterViewUseCase: ConvertTextToBetterViewUseCase,
     private val stringHelper: StringHelper
 ): ViewModel() {
     private val _uiState: MutableStateFlow<UiState?> = MutableStateFlow(null)
@@ -31,7 +32,7 @@ class MainViewModel @Inject constructor(
 
     fun fetchImagesList() {
         viewModelScope.launch {
-            fetchNewsUseCase()
+            convertTextToBetterViewUseCase()
                 .onStart {
                     Log.i(TAG, "viewModelScope.launch: .onStart")
                     UiState(

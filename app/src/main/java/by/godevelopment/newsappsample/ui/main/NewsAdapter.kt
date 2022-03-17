@@ -41,12 +41,11 @@ class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.ItemViewHolder>() {
     override fun onBindViewHolder(holder: NewsAdapter.ItemViewHolder, position: Int) {
         holder.binding.apply {
             val article = newsList[position]
+            textTitle.text = article.title
             textAuthor.text = article.author
-            textContent.text = article.content
             textDescription.text = article.description
             textPublishedAt.text = article.publishedAt
-            textSource.text = article.source.name
-            textTitle.text = article.title
+            textLink.text = article.url
             Glide.with(root)
                 .load(article.urlToImage)
                 .fitCenter()
@@ -54,9 +53,6 @@ class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.ItemViewHolder>() {
                 .error(R.drawable.image_not_loaded)
                 .placeholder(R.drawable.image)
                 .into(image)
-//            root.setOnClickListener {
-//                onClick.invoke(src)
-//            }
         }
     }
 

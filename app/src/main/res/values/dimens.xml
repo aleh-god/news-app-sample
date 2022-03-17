@@ -3,4 +3,5 @@
     <dimen name="main_elevation">5dp</dimen>
     <dimen name="main_padding">3dp</dimen>
     <dimen name="main_margin">3dp</dimen>
+    <dimen name="image_size">200dp</dimen>
 </resources>

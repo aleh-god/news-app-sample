@@ -2,15 +2,21 @@
     <!-- Base application theme. -->
     <style name="Theme.NewsAppSample" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/primaryBrandNavy</item>
+        <item name="colorPrimaryVariant">@color/primaryDarkBrandNavy</item>
+        <item name="colorOnPrimary">@color/primaryTextBrandNavy</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/secondaryBrandNavy</item>
+        <item name="colorSecondaryVariant">@color/secondaryDarkBrandNavy</item>
+        <item name="colorOnSecondary">@color/secondaryTextBrandNavy</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:colorBackground">@color/primaryLightBrandNavy</item>
+        <item name="colorOnBackground">@color/black</item>
+        <item name="colorSurface">@color/Winter</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="colorError">@color/purple_200</item>
+        <item name="colorOnError">@color/black</item>
     </style>
 </resources>

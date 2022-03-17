@@ -1,6 +1,8 @@
 package by.godevelopment.newsappsample
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-class NewsApp : Application() {
+@HiltAndroidApp
+class ImageGalleryApp : Application() {
 }

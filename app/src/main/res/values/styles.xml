@@ -15,4 +15,11 @@
     <style name="Widget.NewsAppSample.TextView.Published" parent="Widget.NewsAppSample.TextView">
         <item name="android:textAlignment">textEnd</item>
     </style>
+
+    <style name="Widget.NewsAppSample.TextView.Link" parent="Widget.MaterialComponents.TextView">
+        <item name="android:padding">@dimen/main_padding</item>
+        <item name="android:autoLink">web</item>
+        <item name="android:linksClickable">true</item>
+        <item name="android:textColorLink">?attr/colorPrimaryVariant</item>
+    </style>
 </resources>

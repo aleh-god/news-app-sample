@@ -66,13 +66,10 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_link"
-            style="@style/Widget.NewsAppSample.TextView"
+            style="@style/Widget.NewsAppSample.TextView.Link"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:linksClickable="true"
-            android:textColorLink="@color/primaryDarkBrandNavy"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textAppearance="@style/TextAppearance.NewsAppSample.Link"
             app:layout_constraintBottom_toTopOf="@+id/text_publishedAt"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

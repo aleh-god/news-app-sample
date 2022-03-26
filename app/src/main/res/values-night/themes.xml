@@ -3,7 +3,7 @@
     <style name="Theme.NewsAppSample" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primaryLightBrandNavy</item>
-        <item name="colorPrimaryVariant">@color/primaryBrandNavy</item>
+        <item name="colorPrimaryVariant">@color/primaryDarkBrandNavy</item>
         <item name="colorOnPrimary">@color/primaryTextBrandNavy</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/secondaryLightBrandNavy</item>
@@ -12,5 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="colorSurface">@color/primaryBrandNavy</item>
+        <item name="colorOnSurface">@color/white</item>
     </style>
 </resources>

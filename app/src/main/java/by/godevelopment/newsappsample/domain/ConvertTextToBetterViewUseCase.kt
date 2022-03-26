@@ -1,7 +1,5 @@
 package by.godevelopment.newsappsample.domain
 
-import android.util.Log
-import by.godevelopment.newsappsample.commons.TAG
 import by.godevelopment.newsappsample.data.datamodel.NewsModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -18,9 +16,8 @@ class ConvertTextToBetterViewUseCase @Inject constructor(
                     val goodTimeString = isoTimeString.replace(
                         "T", " ", true
                     ).dropLast(4)
-                    Log.i(TAG, "ConvertTextToBetterViewUseCase: $isoTimeString -> $goodTimeString")
                     article.copy(
-                        description = "\t"+article.description,
+                        description = "\t" + article.description,
                         publishedAt = goodTimeString
                     )
                 }

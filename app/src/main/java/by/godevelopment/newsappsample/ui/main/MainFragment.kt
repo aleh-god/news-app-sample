@@ -1,8 +1,6 @@
 package by.godevelopment.newsappsample.ui.main
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,10 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.godevelopment.newsappsample.R
-import by.godevelopment.newsappsample.commons.TAG
 import by.godevelopment.newsappsample.databinding.MainFragmentBinding
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -43,29 +39,22 @@ class MainFragment : Fragment() {
     private fun setupUi() {
         lifecycleScope.launchWhenStarted {
             viewModel.uiState.collect { uiState ->
-                uiState?.let {
-                    Log.i(TAG, "setupUi: lifecycleScope.launchWhenStarted.collect")
                     val swipeContainer = binding.swipeContainer
                     if (!uiState.isFetchingData) {
                         binding.progress.visibility = View.GONE
                         swipeContainer.isRefreshing = false
+                        showToast(getString(R.string.fragment_message_total) + uiState.model.totalResults)
                     } else binding.progress.visibility = View.VISIBLE
 
-                    showToast(getString(R.string.fragment_message_total) + it.model.totalResults)
-
                     val adapter = NewsAdapter().apply {
-                        newsList = it.model.articles
+                        newsList = uiState.model.articles
                     }
-                    val manager = LinearLayoutManager(requireContext()) // GridLayoutManager(requireContext(), 2)
+                    val manager = LinearLayoutManager(requireContext())
                     binding.rv.adapter = adapter
                     binding.rv.layoutManager = manager
 
                     binding.swipeContainer.apply {
                         setOnRefreshListener {
-                            Log.i(
-                                TAG,
-                                "setupUi: setOnRefreshListener fetchImagesList()"
-                            )
                             viewModel.fetchImagesList()
                         }
                         setColorSchemeResources(
@@ -75,7 +64,6 @@ class MainFragment : Fragment() {
                             android.R.color.holo_red_light
                         )
                     }
-                }
             }
         }
     }

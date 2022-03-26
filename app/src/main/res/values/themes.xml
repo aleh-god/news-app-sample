@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="android:colorBackground">@color/primaryLightBrandNavy</item>
         <item name="colorOnBackground">@color/black</item>
-        <item name="colorSurface">@color/Winter</item>
+        <item name="colorSurface">@color/white</item>
         <item name="colorOnSurface">@color/black</item>
         <item name="colorError">@color/purple_200</item>
         <item name="colorOnError">@color/black</item>

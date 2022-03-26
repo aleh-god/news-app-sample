@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="main_elevation">5dp</dimen>
+    <dimen name="big_padding">15dp</dimen>
+    <dimen name="average_padding">10dp</dimen>
     <dimen name="main_padding">3dp</dimen>
+    <dimen name="small_padding">1dp</dimen>
     <dimen name="main_margin">3dp</dimen>
-    <dimen name="image_size">200dp</dimen>
+    <dimen name="image_size">95dp</dimen>
 </resources>

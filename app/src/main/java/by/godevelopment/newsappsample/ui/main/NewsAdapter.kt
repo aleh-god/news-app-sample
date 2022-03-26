@@ -48,7 +48,7 @@ class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.ItemViewHolder>() {
             textLink.text = article.url
             Glide.with(root)
                 .load(article.urlToImage)
-                .fitCenter()
+                .centerCrop() // .fitCenter()
                 .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
                 .error(R.drawable.image_not_loaded)
                 .placeholder(R.drawable.image)

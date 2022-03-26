@@ -3,5 +3,5 @@
     <string name="alert_error_loading">Load data error!</string>
     <string name="snackbar_btn_reload">Reload</string>
     <string name="layout_desc_item">Image from item view</string>
-    <string name="fragment_message_total">\"Total articles count: \"</string>
+    <string name="fragment_message_total">Total articles count: </string>
 </resources>

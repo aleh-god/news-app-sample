@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Widget.NewsAppSample.TextView" parent="Widget.MaterialComponents.TextView">
-        <item name="android:padding">@dimen/main_padding</item>
+        <item name="android:paddingTop">@dimen/main_padding</item>
+        <item name="android:paddingBottom">@dimen/main_padding</item>
+        <item name="android:paddingEnd">@dimen/average_padding</item>
+        <item name="android:paddingStart">@dimen/average_padding</item>
     </style>
 
-    <style name="Widget.NewsAppSample.TextView.Title" parent="Widget.NewsAppSample.TextView">
+    <style name="Widget.NewsAppSample.TextView.Title">
         <item name="android:textAlignment">center</item>
     </style>
 
-    <style name="Widget.NewsAppSample.TextView.Author" parent="Widget.NewsAppSample.TextView">
+    <style name="Widget.NewsAppSample.TextView.Author">
         <item name="android:textAlignment">textEnd</item>
     </style>
 
-    <style name="Widget.NewsAppSample.TextView.Published" parent="Widget.NewsAppSample.TextView">
-        <item name="android:textAlignment">textEnd</item>
-    </style>
-
-    <style name="Widget.NewsAppSample.TextView.Link" parent="Widget.MaterialComponents.TextView">
-        <item name="android:padding">@dimen/main_padding</item>
+    <style name="Widget.NewsAppSample.TextView.Link">
         <item name="android:autoLink">web</item>
         <item name="android:linksClickable">true</item>
         <item name="android:textColorLink">?attr/colorPrimaryVariant</item>
     </style>
+
+    <style name="Widget.NewsAppSample.TextView.Published">
+        <item name="android:textAlignment">textEnd</item>
+    </style>
+
 </resources>

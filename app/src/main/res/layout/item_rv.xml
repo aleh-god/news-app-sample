@@ -20,7 +20,7 @@
             android:textAppearance="@style/TextAppearance.NewsAppSample.Title"
             app:layout_constraintBottom_toTopOf="@+id/text_author"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/lorem" />
@@ -33,23 +33,21 @@
             android:textAppearance="@style/TextAppearance.NewsAppSample.Author"
             app:layout_constraintBottom_toTopOf="@+id/image"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_title"
             tools:text="@tools:sample/lorem" />
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="@dimen/image_size"
+            android:layout_width="0dp"
             android:layout_height="@dimen/image_size"
-            android:src="@drawable/ic_launcher_foreground"
             android:contentDescription="@string/layout_desc_item"
             app:layout_constraintBottom_toTopOf="@+id/text_description"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_author"
-            tools:src="@drawable/ic_launcher_foreground" />
+            tools:src="@drawable/ic_launcher_foreground"
+            />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_description"
@@ -59,10 +57,9 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
             app:layout_constraintBottom_toTopOf="@+id/text_link"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/image"
-            tools:text="@tools:sample/lorem" />
+            tools:text="@tools:sample/lorem/random" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_link"
@@ -72,10 +69,10 @@
             android:textAppearance="@style/TextAppearance.NewsAppSample.Link"
             app:layout_constraintBottom_toTopOf="@+id/text_publishedAt"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_description"
-            tools:text="www.google.com" />
+            tools:text="www.google.com"
+            />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_publishedAt"
@@ -85,7 +82,6 @@
             android:textAppearance="@style/TextAppearance.NewsAppSample.Published"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_link"
             tools:ignore="TextContrastCheck"

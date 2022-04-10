@@ -1,11 +1,11 @@
 package by.godevelopment.newsappsample.ui.main
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,33 +37,30 @@ class MainFragment : Fragment() {
     }
 
     private fun setupUi() {
+        val newsAdapter = NewsAdapter()
+        binding.apply {
+            rv.adapter = newsAdapter
+            rv.layoutManager = LinearLayoutManager(requireContext())
+            swipeContainer.apply {
+                setOnRefreshListener {
+                    viewModel.fetchImagesList()
+                }
+                setColorSchemeResources(
+                    android.R.color.holo_blue_bright,
+                    android.R.color.holo_green_light,
+                    android.R.color.holo_orange_light,
+                    android.R.color.holo_red_light
+                )
+            }
+        }
         lifecycleScope.launchWhenStarted {
             viewModel.uiState.collect { uiState ->
-                    val swipeContainer = binding.swipeContainer
-                    if (!uiState.isFetchingData) {
-                        binding.progress.visibility = View.GONE
-                        swipeContainer.isRefreshing = false
-                        showToast(getString(R.string.fragment_message_total) + uiState.model.totalResults)
-                    } else binding.progress.visibility = View.VISIBLE
-
-                    val adapter = NewsAdapter().apply {
-                        newsList = uiState.model.articles
-                    }
-                    val manager = LinearLayoutManager(requireContext())
-                    binding.rv.adapter = adapter
-                    binding.rv.layoutManager = manager
-
-                    binding.swipeContainer.apply {
-                        setOnRefreshListener {
-                            viewModel.fetchImagesList()
-                        }
-                        setColorSchemeResources(
-                            android.R.color.holo_blue_bright,
-                            android.R.color.holo_green_light,
-                            android.R.color.holo_orange_light,
-                            android.R.color.holo_red_light
-                        )
-                    }
+                if (!uiState.isFetchingData) {
+                    binding.progress.visibility = View.GONE
+                    binding.swipeContainer.isRefreshing = false
+                    showToast(getString(R.string.fragment_message_total) + uiState.model.totalResults)
+                } else binding.progress.visibility = View.VISIBLE
+                newsAdapter.newsList = uiState.model.articles
             }
         }
     }
